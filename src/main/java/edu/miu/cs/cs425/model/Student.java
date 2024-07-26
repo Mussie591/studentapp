@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,6 +21,14 @@ public class Student {
     private Double gpa;
     @ManyToOne()
     @JoinColumn(name = "address_id")
+    private Address address;
 
-    public Address address;
+
+    @ManyToMany
+    @JoinTable(name = "Student_Course",
+                joinColumns = @JoinColumn(name = "student_id"),
+                inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courses;
+
+
 }
