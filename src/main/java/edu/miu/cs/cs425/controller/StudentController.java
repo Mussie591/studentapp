@@ -57,4 +57,5 @@ public class StudentController {
     public List<Student> getStudentsByGpa(@RequestParam(name = "gpa") double gpa) {
         return studentService.getStudentsByGpa(gpa);
     }
+
 }
