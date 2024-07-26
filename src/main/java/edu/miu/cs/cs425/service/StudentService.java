@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface StudentService {
 
+    public List<Student> getStudentsByGpa(double gpa);
 
     public Student addStudent(Student student);
     public List<Student> findAll();

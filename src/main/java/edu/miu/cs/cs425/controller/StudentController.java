@@ -4,9 +4,7 @@ import edu.miu.cs.cs425.model.Student;
 import edu.miu.cs.cs425.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/api/v1/student")
@@ -48,5 +46,11 @@ public class StudentController {
     public Student updateStudent(@PathVariable("id") Integer id, @RequestBody Student student){
         return studentService.update(id, student);
     }
-
+  
+  
+ @GetMapping("/students/by-gpa")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Student> getStudentsByGpa(@RequestParam(name = "gpa") double gpa) {
+        return studentService.getStudentsByGpa(gpa);
+    }
 }

@@ -7,7 +7,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
+
+    public final StudentRepository studentRepository;
+
+    public StudentServiceImpl(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+    public List<Student> getStudentsByGpa(double gpa) {
+        return studentRepository.findStudentsByGpaLessThanEqual(gpa);
 
     private StudentRepository studentRepository;
 
