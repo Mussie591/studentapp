@@ -1,4 +1,8 @@
 package edu.miu.cs.cs425.service;
 
-public interface AddressServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class AddressServiceImpl implements AddressService {
+
 }
