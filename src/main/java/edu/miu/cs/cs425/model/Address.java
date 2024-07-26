@@ -21,6 +21,6 @@ public class Address {
     private String state;
     private String zip;
 
-    @OneToMany
+    @OneToMany(mappedBy = "address")
     private List<Student> students; // <>
 }
