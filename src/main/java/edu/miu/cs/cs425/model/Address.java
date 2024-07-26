@@ -1,16 +1,16 @@
 package edu.miu.cs.cs425.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Address {
 
     @Id
@@ -20,4 +20,7 @@ public class Address {
     private String city;
     private String state;
     private String zip;
+
+    @OneToMany(mappedBy = "address")
+    private List<Student> students; // <>
 }
