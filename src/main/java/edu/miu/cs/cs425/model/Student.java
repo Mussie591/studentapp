@@ -12,12 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class Student {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name =" student_id")
 
-    public int Id;
-    public String name;
-    public Double gpa;
+    private int Id;
+    private String name;
+    private Double gpa;
+    @ManyToOne()
+    @JoinColumn(name = "address_id")
+    private Address address;
 
 
     @ManyToMany
@@ -25,4 +29,6 @@ public class Student {
                 joinColumns = @JoinColumn(name = "student_id"),
                 inverseJoinColumns = @JoinColumn(name = "course_id"))
     private List<Course> courses;
+
+
 }
