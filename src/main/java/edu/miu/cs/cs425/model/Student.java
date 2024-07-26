@@ -1,9 +1,6 @@
 package edu.miu.cs.cs425.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,12 +10,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Student {
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name =" student_id")
 
-    public int Id;
-    public String name;
-    public Double gpa;
+    private int Id;
+    private String name;
+    private Double gpa;
+    @ManyToOne()
+    @JoinColumn(name = "address_id")
 
-   // public Address address;
+    public Address address;
 }
