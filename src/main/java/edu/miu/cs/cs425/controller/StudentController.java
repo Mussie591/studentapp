@@ -1,5 +1,6 @@
 package edu.miu.cs.cs425.controller;
 
+import edu.miu.cs.cs425.model.Course;
 import edu.miu.cs.cs425.model.Student;
 import edu.miu.cs.cs425.service.StudentService;
 import org.springframework.http.HttpStatus;
@@ -13,10 +14,7 @@ import java.util.List;
 @RequestMapping("/api/v1/student")
 public class StudentController {
 
-<<<<<<< HEAD
-=======
 
->>>>>>> db5cf39a20eaaa9ded35d2817d5b04ee43a6e10b
     private StudentService studentService;
 
     public StudentController(StudentService studentService) {
@@ -60,8 +58,5 @@ public class StudentController {
     public List<Student> getStudentsByGpa(@RequestParam(name = "gpa") double gpa) {
         return studentService.getStudentsByGpa(gpa);
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> db5cf39a20eaaa9ded35d2817d5b04ee43a6e10b
+   // List<Course> findCoursesByStudentId(@RequestParam())
 }
