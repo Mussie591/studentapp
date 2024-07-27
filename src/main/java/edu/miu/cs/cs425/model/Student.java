@@ -19,7 +19,7 @@ public class Student {
     private int Id;
     private String name;
     private Double gpa;
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
 

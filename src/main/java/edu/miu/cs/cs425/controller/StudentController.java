@@ -1,5 +1,6 @@
 package edu.miu.cs.cs425.controller;
 
+import edu.miu.cs.cs425.model.Course;
 import edu.miu.cs.cs425.model.Student;
 import edu.miu.cs.cs425.service.StudentService;
 import org.springframework.http.HttpStatus;
