@@ -18,10 +18,6 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getStudentsByGpa(double gpa) {
         return studentRepository.findStudentsByGpaLessThanEqual(gpa);
 
-    private StudentRepository studentRepository;
-
-    public StudentServiceImpl(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
     }
 
     @Override
