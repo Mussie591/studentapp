@@ -9,9 +9,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Integer> {
     @Query("SELECT s.courses FROM Student s WHERE s.Id = :studentId")
     List<Course> findCoursesByStudentId(@Param("studentId") int studentId);
 
+    @Query("SELECT s FROM Student s WHERE s.gpa <= :gpa")
+    List<Student> findStudentsByGpaLessThanEqual(@Param("gpaValue") double gpa);
 }
