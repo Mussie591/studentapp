@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "Address")
 public class Address {
 
     @Id
@@ -22,5 +23,5 @@ public class Address {
     private String zip;
 
     @OneToMany(mappedBy = "address")
-    private List<Student> students; // <>
+    private List<Student> students;
 }

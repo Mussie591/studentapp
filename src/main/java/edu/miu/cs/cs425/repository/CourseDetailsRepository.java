@@ -12,7 +12,6 @@ import java.util.List;
 
 @Repository
 public interface CourseDetailsRepository extends JpaRepository<CourseDetails, Integer> {
-    @Query("SELECT s FROM Student s WHERE s.gpa <= :gpaValue")
-    List<Student> findStudentsByGpaLessThanEqual(@Param("gpaValue") double gpaValue);
+
 
 }
