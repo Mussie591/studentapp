@@ -2,6 +2,7 @@ package edu.miu.cs.cs425.service;
 
 import edu.miu.cs.cs425.model.Student;
 import edu.miu.cs.cs425.repository.StudentRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    public final StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
     public StudentServiceImpl(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
@@ -19,7 +20,6 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findStudentsByGpaLessThanEqual(gpa);
 
     }
-
     @Override
     public Student addStudent(Student student) {
         return studentRepository.save(student);

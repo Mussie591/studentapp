@@ -11,9 +11,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "Course_Details")
 @Entity
 public class CourseDetails {
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     @Column(name = "description_id")
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "description_id")
     private Integer descriptionId;
     private String courseDescription;
     private int credit;

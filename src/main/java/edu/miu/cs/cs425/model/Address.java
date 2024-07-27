@@ -1,5 +1,6 @@
 package edu.miu.cs.cs425.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,5 +24,6 @@ public class Address {
     private String zip;
 
     @OneToMany(mappedBy = "address")
+    @JsonManagedReference
     private List<Student> students;
 }

@@ -5,7 +5,7 @@ INSERT INTO Student (student_id, name, gpa, address_id) VALUES
                                                             (113, 'Yasmeen', 3.9, 2);
 
 -- Insert data into Address table
-INSERT INTO Address (address_id, city, state, zipcode) VALUES
+INSERT INTO Address (address_id, city, state, zip) VALUES
                                                            (1, 'Fairfield', 'IA', 52556),
                                                            (2, 'Iowa City', 'IA', 52440),
                                                            (3, 'Morrison', 'IL', 61270);
